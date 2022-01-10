@@ -1,0 +1,24 @@
+.pgen{
+    text-decoration: underline;
+}
+
+
+
+.myCanvas{
+    border: 1px solid black;
+    margin: 40px 0;
+    /* animation: morph 2s infinite; */
+
+}
+
+#scream{
+    display: none;
+}
+
+
+@keyframes morph {
+    0%{width: 200px; height: 100px;}
+    50%{width: 500px;height: 400px;}
+    100%{width: 200px; height: 100px;}
+}
+

@@ -7,6 +7,7 @@ const initPlace = {//position initiale du snake
     y: 3
 }
 const blockSize = 30;//taille des blocs du snake
+const randomizeColors = false;
 var direction = "";//"up""down""left""right"
 var directionChangeable = "";
 
@@ -40,10 +41,19 @@ class blockGame {
     static width = blockSize;
     static height = blockSize;
     constructor(x, y, color = "rgb(0,0,0,0.3)") {
+        if (randomizeColors){
+            var col1 = Math.floor(Math.random()*255);
+            var col2 = Math.floor(Math.random()*255);
+            var col3 = Math.floor(Math.random()*255);
+            this.color = "rgb("+col1+","+col2+","+col3+")";
+        }
+        else{
+            this.color = color;
+        }
         this.x = x;
         this.y = y;
         this.context = snakeCanvas.getContext("2d");
-        this.context.fillStyle = color;
+        this.context.fillStyle = this.color;
         this.drawBlock();
         this.movable = false;
     }

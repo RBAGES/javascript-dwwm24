@@ -6,6 +6,7 @@
 
 .myCanvas{
     border: 1px solid black;
+    background: #a7dda7;
     margin: 40px 0;
     /* animation: morph 2s infinite; */
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <html lang="fr">
+        <head>
+            <meta charset="utf-8">
+            <title> HOME </title>
+            <link rel="stylesheet" href="clock.css">
+        </head>
+
+        <body>
+            <div id="block-page"></div>
+                <header>
+                    <nav>
+                        <ul>
+                            <li><a class="current-page" href="home.html">Home</a></li>
+                            <li><p>|</p></li>
+                            <li><a href="a-propos.html">About us</a></li>
+                        </ul>
+                    </nav>
+                    <h1 class="main-title">TIME MACHINE</h1>
+                </header>
+                <section id="section1">
+                <p><strong>Présentation du projet:</strong></p>
+                <p>Le projet sur lequel nous avons travaillé est une horloge personnalisée qui est capable de montrer différentes heures en fonction du fuseau horaire. En effet, grâce au menu déroulant situé sous l'horloge il est possible de choisir parmi plusieurs fuseaux horaires. </p>
+
+                <div class="container">
+                <canvas id="clock" width="600" height="600"></canvas><br>
+                </div>
+
+                <div class="button">
+                <label for="time-zone-selector"></label>
+                <select name="time-zone" id="time-select">
+                </select>
+                </div>
+                <script type="text/javascript" src="pizza.js"></script>
+                </section>
+                <footer>
+
+                    <p>DWWM24 | Copyleft &copy; 2022 </p>
+                </footer>
+        </body>
+    </html>

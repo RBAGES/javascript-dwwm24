@@ -54,11 +54,13 @@ class blockGame {
         this.y = y;
         this.context = snakeCanvas.getContext("2d");
         this.context.fillStyle = this.color;
+        this.context.strokeStyle= "white";
         this.drawBlock();
         this.movable = false;
     }
     drawBlock() {
         this.context.fillRect(this.x, this.y, blockGame.width, blockGame.height);
+        // this.context.strokeRect(this.x, this.y, blockGame.width, blockGame.height);
     }
     moveX(val) {
         this.clearBlock();
@@ -94,6 +96,39 @@ const createBlock = () => {
 };
 
 
+// // fonction alternative pour le déplacement
+// const moveSnakeAlt = () => {
+//     if (direction === "")
+//         return null;
+
+    
+    
+//     switch (direction) {
+//         case "left":
+//             blocks.unshift(new blockGame(blocks[0].x-blockSize, blocks[0].y))
+//             break;
+//         case "down":
+//             blocks.unshift(new blockGame(blocks[0].x, blocks[0].y+blockSize))
+//             break;
+//         case "up":
+//             blocks.unshift(new blockGame(blocks[0].x, blocks[0].y-blockSize));
+//             break;
+//         case "right":
+//             blocks.unshift(new blockGame(blocks[0].x+blockSize, blocks[0].y));
+//             break;
+//         default:
+//             null;
+//             break;
+//     }
+//     blocks[blocks.length-1].clearBlock();
+//     blocks.pop();
+//     console.log(blocks);
+//     blocks.forEach(block => {
+//         block.drawBlock();
+//     });
+//     directionChangeable = direction;// on stock la direction du tick pour la comparer avec celle qu'entrera l'utilisateur, pour voir s'il a le droit d'aller dans sa nouvelle direction
+//     checkCollision();
+// }
 
 const moveSnake = () => {
     if (direction === "")
@@ -133,7 +168,6 @@ const moveSnake = () => {
     });
     directionChangeable = direction;// on stock la direction du tick pour la comparer avec celle qu'entrera l'utilisateur, pour voir s'il a le droit d'aller dans sa nouvelle direction
     checkCollision();
-
 }
 
 document.addEventListener("keydown", (e) => {
